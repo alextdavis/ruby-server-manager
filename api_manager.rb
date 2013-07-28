@@ -1,13 +1,13 @@
 require 'jsonapi'
-require 'config.rb'
+require './config.rb'
 
 class ApiManager
 
   def initialize
-    @api = JSONAPI::JSONAPI.new(apiSettings)
+    @api = JSONAPI::JSONAPI.new($apiSettings)
   end
 
   def call(method, *args)
-    @api.call_api(method, *args)
+    @api.call_api(method, *args).body
   end
 end
