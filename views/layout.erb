@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js">
+<% remote = ApiManager.new %>
 
 <head>
   <title>Admin Home Page</title>
@@ -203,8 +204,8 @@
     </div>
     <div class="block-content collapse in">
       <div class="span3">
-        <div class="chart" data-percent="73">73%</div>
-        <div class="chart-bottom-heading"><span class="label label-info">Visitors</span>
+        <div class="chart" data-percent="<%= (remote.call(:getPlayerCount)["success"])/(remote.call(:getPlayerLimit)["success"])*100 %>"><%= remote.call(:getPlayerCount)["success"] %> of <%= remote.call(:getPlayerLimit)["success"] %></div>
+        <div class="chart-bottom-heading"><span class="label label-info">Player Capacity</span>
 
         </div>
       </div>
