@@ -1,1 +1,7 @@
-hello, world
+</h1>hello, world</h1>
+
+<% remote = ApiManager.new %>
+
+<% result = remote.call(:getPlayerLimit) %>
+
+<p>Total Slots: <%= result["success"] %></p>

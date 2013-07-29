@@ -22,3 +22,4 @@ doc/
 
 # Omit settings files
 config.rb
+./config.rb
